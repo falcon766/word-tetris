@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Word Tetris</title>
+    <meta name="description" content="Word Tetris - A fun word-building puzzle game combining Tetris with word games">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>Word Tetris</h1>
+            <div class="score-container">
+                <div class="score">Score: <span id="score">0</span></div>
+                <div class="level">Level: <span id="level">1</span></div>
+                <div class="lines">Words: <span id="words">0</span></div>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <div class="game-board" id="game-board"></div>
+            <div class="side-panel">
+                <div class="top-controls">
+                    <div class="next-piece-container">
+                        <h3>Next:</h3>
+                        <div class="next-piece" id="next-piece"></div>
+                    </div>
+                    <div class="controls">
+                        <h3>Controls:</h3>
+                        <p>← → : Move left/right</p>
+                        <p>↑ : Rotate</p>
+                        <p>↓ : Soft drop</p>
+                        <p>Space : Hard drop</p>
+                        <p>P : Pause</p>
+                    </div>
+                    <div class="game-buttons">
+                        <button id="start-button">Start</button>
+                        <button id="pause-button">Pause</button>
+                        <button id="reset-button">Reset</button>
+                    </div>
+                </div>
+                <div class="dictionary-info">
+                    <h3>Word List:</h3>
+                    <div id="word-list"></div>
+                </div>
+                <div class="touch-controls">
+                    <div class="touch-row">
+                        <div class="touch-button" id="rotate-button">↑</div>
+                    </div>
+                    <div class="touch-row">
+                        <div class="touch-button" id="left-button">←</div>
+                        <div class="touch-button" id="down-button">↓</div>
+                        <div class="touch-button" id="right-button">→</div>
+                    </div>
+                    <div class="touch-row">
+                        <div class="touch-button" id="drop-button">⬇️</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="game-over-modal" class="modal">
+        <div class="modal-content">
+            <h2>Game Over!</h2>
+            <p>Your final score: <span id="final-score">0</span></p>
+            <button id="play-again-button">Play Again</button>
+        </div>
+    </div>
+
+    <script src="js/constants.js"></script>
+    <script src="js/tetromino.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
