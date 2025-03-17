@@ -272,11 +272,20 @@ class Board {
             setTimeout(() => {
                 this.fallBlocks();
                 
+                // Store the current grid state before checking for new words
+                const gridBackup = JSON.parse(JSON.stringify(this.grid));
+                
                 // Redraw the entire board to ensure consistency
                 this.drawBoard();
                 
                 // Check for new words that may have formed after blocks fell
-                this.checkForNewWords();
+                const foundNewWords = this.checkForNewWords();
+                
+                // If no new words were found, restore the grid from backup to prevent letters from resetting
+                if (!foundNewWords) {
+                    this.grid = gridBackup;
+                    this.drawBoard();
+                }
             }, 300); // Delay the falling to make it more visible
         }, 800); // Longer animation duration
     }
