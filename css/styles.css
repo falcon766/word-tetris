@@ -54,9 +54,9 @@ h1 {
 
 .game-area {
     display: flex;
+    flex-direction: column;
     gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
 }
 
 .game-board {
@@ -89,19 +89,21 @@ h1 {
 }
 
 .side-panel {
-    flex: 1;
-    min-width: 300px;
-    max-width: 400px;
+    width: 100%;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.top-controls {
+.game-controls-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+    width: 100%;
+    max-width: 800px;
     justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 .next-piece-container {
@@ -109,9 +111,10 @@ h1 {
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    flex: 1 1 auto;
-    min-width: 80px;
-    max-width: 30%;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .next-piece {
@@ -151,8 +154,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     gap: 5px;
-    flex: 1 1 auto;
-    min-width: 80px;
+    width: 120px;
     background-color: #333333;
     padding: 10px;
     border-radius: 5px;
@@ -271,7 +273,7 @@ button:hover {
 /* Touch controls */
 .touch-controls {
     display: none;
-    margin-top: 20px;
+    margin: 10px 0;
     width: 100%;
     max-width: 300px;
 }
@@ -313,28 +315,14 @@ button:hover {
         padding: 15px;
     }
     
-    .game-area {
-        flex-direction: column;
-        align-items: center;
-    }
-    
     .game-board {
         width: 250px;
         height: 500px;
     }
     
-    .side-panel {
-        width: 100%;
-        min-width: 250px;
-    }
-    
     .next-piece {
         width: 80px;
         height: 80px;
-    }
-    
-    .top-controls {
-        gap: 10px;
     }
     
     .header {
@@ -343,7 +331,7 @@ button:hover {
         gap: 10px;
     }
     
-    .stats {
+    .score-container {
         justify-content: center;
     }
     
@@ -352,29 +340,62 @@ button:hover {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+    .game-controls-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
     .game-board {
         width: 200px;
         height: 400px;
     }
     
-    .top-controls {
-        flex-direction: column;
-    }
-    
     .next-piece-container,
-    .controls,
     .game-buttons {
-        width: 100%;
-        max-width: 100%;
+        width: 80px;
     }
     
-    .game-buttons {
-        flex-direction: row;
-        flex-wrap: wrap;
+    .next-piece {
+        width: 60px;
+        height: 60px;
     }
     
     .game-buttons button {
-        flex: 1;
+        padding: 6px;
+        font-size: 0.8em;
+    }
+    
+    .touch-controls {
+        margin-top: 5px;
+    }
+    
+    .touch-button {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 400px) {
+    .game-board {
+        width: 180px;
+        height: 360px;
+    }
+    
+    .next-piece-container,
+    .game-buttons {
+        width: 70px;
+    }
+    
+    .next-piece {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .touch-button {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
     }
 }

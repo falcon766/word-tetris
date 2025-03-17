@@ -19,43 +19,53 @@
         </div>
         
         <div class="game-area">
-            <div class="game-board" id="game-board"></div>
+            <!-- Game controls layout for better mobile experience -->
+            <div class="game-controls-wrapper">
+                <!-- Left side - Next piece -->
+                <div class="next-piece-container">
+                    <h3>Next:</h3>
+                    <div class="next-piece" id="next-piece"></div>
+                </div>
+                
+                <!-- Center - Game board -->
+                <div class="game-board" id="game-board"></div>
+                
+                <!-- Right side - Game buttons -->
+                <div class="game-buttons">
+                    <button id="start-button">Start</button>
+                    <button id="pause-button">Pause</button>
+                    <button id="reset-button">Reset</button>
+                </div>
+            </div>
+            
+            <!-- Touch controls immediately below the game -->
+            <div class="touch-controls">
+                <div class="touch-row">
+                    <div class="touch-button" id="rotate-button">↑</div>
+                </div>
+                <div class="touch-row">
+                    <div class="touch-button" id="left-button">←</div>
+                    <div class="touch-button" id="down-button">↓</div>
+                    <div class="touch-button" id="right-button">→</div>
+                </div>
+                <div class="touch-row">
+                    <div class="touch-button" id="drop-button">⬇️</div>
+                </div>
+            </div>
+            
+            <!-- Side panel with keyboard controls and word list -->
             <div class="side-panel">
-                <div class="top-controls">
-                    <div class="next-piece-container">
-                        <h3>Next:</h3>
-                        <div class="next-piece" id="next-piece"></div>
-                    </div>
-                    <div class="controls">
-                        <h3>Controls:</h3>
-                        <p>← → : Move left/right</p>
-                        <p>↑ : Rotate</p>
-                        <p>↓ : Soft drop</p>
-                        <p>Space : Hard drop</p>
-                        <p>P : Pause</p>
-                    </div>
-                    <div class="game-buttons">
-                        <button id="start-button">Start</button>
-                        <button id="pause-button">Pause</button>
-                        <button id="reset-button">Reset</button>
-                    </div>
+                <div class="controls">
+                    <h3>Controls:</h3>
+                    <p>← → : Move left/right</p>
+                    <p>↑ : Rotate</p>
+                    <p>↓ : Soft drop</p>
+                    <p>Space : Hard drop</p>
+                    <p>P : Pause</p>
                 </div>
                 <div class="dictionary-info">
                     <h3>Word List:</h3>
                     <div id="word-list"></div>
-                </div>
-                <div class="touch-controls">
-                    <div class="touch-row">
-                        <div class="touch-button" id="rotate-button">↑</div>
-                    </div>
-                    <div class="touch-row">
-                        <div class="touch-button" id="left-button">←</div>
-                        <div class="touch-button" id="down-button">↓</div>
-                        <div class="touch-button" id="right-button">→</div>
-                    </div>
-                    <div class="touch-row">
-                        <div class="touch-button" id="drop-button">⬇️</div>
-                    </div>
                 </div>
             </div>
         </div>
